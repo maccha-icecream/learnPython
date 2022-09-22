@@ -26,6 +26,7 @@ def qe_solution2(a, b, c):
     return ans
 
 if __name__ == '__main__':
+    print(qe_solution2(1, -2, 1))
     assert qe_disc(1, -2, 1) == 0
     assert qe_disc(1, -5, 6) == 1
     assert round(qe_solution1(1, -2, 1) - 1, 6) == 0
