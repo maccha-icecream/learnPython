@@ -1,6 +1,12 @@
 import sys
 import math
 
+g = 9.8
+a = 10
+
+def force(m):
+    return  g * m
+
 def ft_to_cm(feet, inch):
     cm_per_feet = 30.48
     cm_per_inch = cm_per_feet / 12
@@ -25,11 +31,12 @@ def qe_solution2(a, b, c):
     ans = (-b + math.sqrt(qe_disc(a, b, c))) / 2 * a
     return ans
 
+def foo():
+    return a
+def bar():
+    a = 3
+    return a
+
 if __name__ == '__main__':
-    print(qe_solution2(1, -2, 1))
-    assert qe_disc(1, -2, 1) == 0
-    assert qe_disc(1, -5, 6) == 1
-    assert round(qe_solution1(1, -2, 1) - 1, 6) == 0
-    assert round(qe_solution2(1, -2, 1) - 1, 6) == 0
-    assert round(qe_solution1(1, -5, 6) - 2, 6) == 0
-    assert round(qe_solution2(1, -5, 6) - 3, 6) == 0
+    print(foo())
+    print(bar())
