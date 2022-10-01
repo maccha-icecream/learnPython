@@ -36,21 +36,11 @@ def square2(ln):
     return [x ** 2 for x in ln]
 
 if __name__ == "__main__":
-    print(change_domain('spam@utokyo-ipp.org', 'ipp.u-tokyo.ac.jp') == 'spam@ipp.u-tokyo.ac.jp')
-    print(reverse_totuple([1, 2, 3, 4, 5]) == (5, 4, 3, 2, 1))
+    number = (1, 2, 3)
+    x, y, z = 1, 2, 3
+    print(y)
 
-    print(sum_list([10, 20, 30]) == 60)
-    print(sum_list([-1, 2, -3, 4, -5]) == -3)
-
-    print(sorted(atgc_countlist('AAGCCCCATGGTAA')) == sorted([[5, 'A'], [2, 'T'], [3, 'G'], [4, 'C']]))
-
-    original = [0, 1, 2, 3, 4, 5]
-    print(square(original) == square2(original))
-
-    a = []
-    b = []
-    b.append([1])
-    d = [b, b]
-    print(d[0] is d[1])
-    b.append(1)
-    print(d[0] is d[1])
+    x = 'apple'
+    y = 'pen'
+    y, x = x, y
+    print(x)
