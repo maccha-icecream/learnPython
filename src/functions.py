@@ -39,7 +39,9 @@ def greeting(greet, en = 'Hello', *args, **kwargs):
 def greeting_global():
     print('This is the greeting_global function.')
 
+def sum(x, y):
+    return x * y
+
 if __name__ == "__main__":
-    # greeting_globalは関数greeting_globalを参照するので
-    # class 'function'と表示される
-    print(type(greeting_global))
+    print(sum('abc', 3))
+    print(sum(4, 3))
