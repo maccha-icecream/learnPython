@@ -1,5 +1,6 @@
 import dataclasses
 import sys, enum
+from typing import Union
 
 # 申請ステータス
 class ShinseiStatus(enum.Enum):
@@ -18,7 +19,7 @@ class ShinseiStatus(enum.Enum):
 
 @dataclasses.dataclass
 class ShinseiStatusTransition:
-    __allowed : {}
+    __allowed : dict[ShinseiStatus, dict[ShinseiStatus]]
     def __init__(self) -> None:
         self.__allowed = {
             ShinseiStatus.IN_INSPECTION: {
