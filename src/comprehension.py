@@ -57,3 +57,7 @@ if __name__ == "__main__":
    print(total)
    total = sum(x ** 2 for x in range(5))
    print(total)
+   anyMatch = any(x % 2 == 1 for x in range(5))
+   print(anyMatch)
+   allMatch = all(x % 2 == 1 for x in range(5))
+   print(allMatch)
