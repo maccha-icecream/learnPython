@@ -42,5 +42,10 @@ def number_of_big_numbers(ln, n):
     mp = map(lambda x:1,itr)
     return sum(1 for x in itr)
 
+def number_of_long_lines(file, n):
+    with open(file,'r', encoding='utf-8') as f:
+        return sum(map(lambda x: 1, filter(lambda x:len(x) > n, f)))
+        # return sum(map(lambda x: 1, filter(lambda x: len(x) > n, f.readlines())))
+
 if __name__ == "__main__":
-    print(number_of_big_numbers([10, 0, 7, 1, 5, 2, 9], 11))
+    print(number_of_long_lines('text/jugemu.txt', 30))
