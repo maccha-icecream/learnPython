@@ -11,7 +11,7 @@ def exception9(a):
     x = a[0]
     for y in a:
         if x != y:
-            return  y
+            return y
 
 
 if __name__ == '__main__':
