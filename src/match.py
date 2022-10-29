@@ -42,6 +42,7 @@ class Rectangle:
 class Circle:
     radius: float
 
+
 def identify_shape(shape: Point | Rectangle | Circle) -> str:
     match shape:
         case Point():

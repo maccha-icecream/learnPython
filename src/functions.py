@@ -1,7 +1,7 @@
 import sys
 
 greeting_global = 'Hello'
-print(type(greeting_global))
+# print(type(greeting_global))
 
 # def greeting():
 #     global greeting_global
@@ -42,6 +42,11 @@ def greeting_global():
 def sum(x, y):
     return x * y
 
+def is_palindrome(palindrome):
+    # return "".join(reversed(list(palindrome))) == palindrome
+    return palindrome[::-1] == palindrome
+
+
 if __name__ == "__main__":
-    print(sum('abc', 3))
-    print(sum(4, 3))
+    print(is_palindrome("しなもんぱんもれもんぱんもなし"))
+    print(is_palindrome("よるくるよ"))
