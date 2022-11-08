@@ -9,3 +9,7 @@ for i in range(len(days)):
 
 for day, fruit, drink in zip(days, fruits, drinks):
     print(day, fruit, drink)
+
+
+for x in drinks:
+    print(f'I want a {x}')

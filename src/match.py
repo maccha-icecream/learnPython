@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 def simple_match() -> None:
     c = 3
 
@@ -13,6 +14,7 @@ def simple_match() -> None:
         case _:
             print('Other')
 
+
 @dataclass
 class Point:
     x: int
@@ -21,16 +23,17 @@ class Point:
 
 def where_am_i(point: Point) -> str:
     match point:
-        case Point(x = 0, y = 0):
+        case Point(x=0, y=0):
             return 'Origin'
-        case Point(x = 0) as p:
+        case Point(x=0) as p:
             return f'Y={p.y}'
-        case Point(y = 0) as p:
+        case Point(y=0) as p:
             return f'X={p.y}'
         case Point() as p:
             return f'X={p.x}, Y={p.y}'
         case _:
             raise ValueError('Not a point')
+
 
 @dataclass
 class Rectangle:
@@ -46,7 +49,7 @@ class Circle:
 def identify_shape(shape: Point | Rectangle | Circle) -> str:
     match shape:
         case Point():
-            return  f'This is a Point({shape.x}, {shape.y})'
+            return f'This is a Point({shape.x}, {shape.y})'
         case Rectangle():
             return f'This is a Rectangle({shape.width}, {shape.length})'
         case Circle():
@@ -65,3 +68,6 @@ if __name__ == "__main__":
     print(identify_shape(rectangle))
     print(identify_shape(circle))
     print(identify_shape(unknown))
+
+
+    response

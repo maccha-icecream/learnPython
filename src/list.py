@@ -35,12 +35,8 @@ def square(ln):
 def square2(ln):
     return [x ** 2 for x in ln]
 
-if __name__ == "__main__":
-    number = (1, 2, 3)
-    x, y, z = 1, 2, 3
-    print(y)
 
-    x = 'apple'
-    y = 'pen'
-    y, x = x, y
-    print(x)
+if __name__ == "__main__":
+    numbers = [10, 21, 86]
+    number_with_prefix = [f'No.{x}' for x in numbers]
+    print(number_with_prefix)
