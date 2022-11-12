@@ -1,20 +1,6 @@
 from dataclasses import dataclass
 
 
-def simple_match() -> None:
-    c = 3
-
-    match c:
-        case 1:
-            print('One')
-        case 2:
-            print('Two')
-        case 3:
-            print('Three')
-        case _:
-            print('Other')
-
-
 @dataclass
 class Point:
     x: int
@@ -58,6 +44,40 @@ def identify_shape(shape: Point | Rectangle | Circle) -> str:
             raise ValueError('Unknown Shape')
 
 
+def macth_dict(resonse: dict) -> None:
+    match resonse:
+        case {'status': 200, 'north lat': x}:
+            print(f'北緯{x}度')
+        case {'status': 200, 'south lat': x}:
+            print(f'南緯{x}度')
+        case _:
+            raise ValueError('Unknown Response')
+
+
+def macth_cood(cood_list: list) -> None:
+    match cood_list:
+        case [0]:
+            print('1次元の原点です.')
+        case [x]:
+            print(f'1次元の座標（{x}）です.')
+        case [0, 0]:
+            print('2次元の原点です.')
+        case [x, y]:
+            print(f'2次元の座標（{x}, {y}）です.')
+        case _:
+            raise ValueError('Unknown Point.')
+
+
+def match_greater_than_zero_cood(cood_list: list) -> None:
+    match cood_list:
+        case [x] if x >= 0:
+            print(f'1次元の座標（{x}）です.')
+        case [x, y] if x >= 0 and y >= 0:
+            print(f'2次元の座標（{x}）です.')
+        case _:
+            raise ValueError('Unknown Point.')
+
+
 if __name__ == "__main__":
     point: Point = Point(1, 1)
     rectangle: Rectangle = Rectangle(3, 4)
@@ -67,7 +87,10 @@ if __name__ == "__main__":
     print(identify_shape(point))
     print(identify_shape(rectangle))
     print(identify_shape(circle))
-    print(identify_shape(unknown))
+    # print(identify_shape(unknown))
 
+    res_dict = {'status': 200, 'south lat': 9.02}
+    macth_dict(res_dict)
 
-    response
+    match_greater_than_zero_cood([-1])
+    match_greater_than_zero_cood([0])
