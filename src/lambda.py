@@ -1,23 +1,38 @@
-l = ['Mon', 'Tue', 'Wed', 'Thu', 'fri', 'sat', 'sun']
+def add_def(a, b = 1):
+    return a + b
 
 
-def change_words(words, func):
-    for word in words:
-        print(func(word))
+add_lambda = lambda a, b = 1: a + b
 
 
-# def sample_func(word):
-#     return word.capitalize()
-
-sample_func = lambda word: word.capitalize()
-
-def sample_func2(word):
-    return word.lower()
+print(add_def(3, 4) == add_lambda(3, 4))
+print(add_def(3) == add_lambda(3))
 
 
-odd = [x for x in range(1, 11) if x % 2 == 1]
-# odd_between_5_and_10 = list(filter(lambda x:x > 4, odd))
-odd_between_5_and_10 = [x for x in odd if x > 4]
-print(odd_between_5_and_10)
-square_of_odds = [x ** 2 for x in odd]
-print(square_of_odds)
+get_odd_even = lambda x: 'even' if x % 2 == 0 else 'odd'
+
+print(get_odd_even(3))
+print(get_odd_even(4))
+
+l = ('Charle', 'Bob', 'Alice')
+# アルファベット順
+l_sorted = sorted(l)
+print(l_sorted)
+# 2文字目のアルファベット順
+l_sorted_len = sorted(l, key=lambda x: x[1])
+print(l_sorted_len)
+
+
+n = tuple(x for x in range(4))
+# ラムダ式
+# square = map(lambda x: x ** 2, n)
+# print(tuple(square))
+# リスト内包表記
+square = (x ** 2 for x in n)
+print(tuple(square))
+
+# ラムダ式
+# filter_even = filter(lambda x: x % 2 == 0, n)
+# リスト内包表記
+filter_even = tuple(x for x in n if x % 2 == 0)
+print(tuple(filter_even))
