@@ -28,8 +28,8 @@ def print_address(user: Student | Teacher) -> str:
 
 if __name__ == "__main__":
     student = Student('Alice')
-    teacher = Teacher('Bob', False)
-    principal = Teacher('Charlie', True)
+    teacher = Teacher('Bob', is_principal=False)
+    principal = Teacher('Charlie', is_principal=True)
 
     print_address(student)
     print_address(teacher)
