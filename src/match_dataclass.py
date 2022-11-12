@@ -5,11 +5,17 @@ from dataclasses import dataclass
 class Student:
     name: str
 
+    def print_address(self):
+        return f'{self.name}さんへ'
+
 
 @dataclass
 class Teacher:
     name: str
     is_principal: bool
+
+    def print_address(self):
+        return f'{self.name}校長先生へ' if self.is_principal else f'{self.name}先生へ'
 
 
 def print_address(user: Student | Teacher) -> str:
@@ -24,6 +30,10 @@ def print_address(user: Student | Teacher) -> str:
             print(f'{user.name}先生へ')
         case _:
             raise ValueError('Unknown')
+
+
+def print_address_with_ducktyping(user: Student | Teacher) -> None:
+    print(user.print_address())
 
 
 if __name__ == "__main__":
